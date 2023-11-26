@@ -10,7 +10,7 @@ This project involves creating a containerized application and deploying it to A
 
 - **ECR Repository**: The Docker image of the application is stored in AWS ECR, which is a fully managed Docker container registry that allows developers to store, manage, and deploy Docker container images.
 
-- **Containerized Application**: The application is containerized, meaning it is encapsulated with its dependencies and configuration for consistency across development, testing, and production environments.
+- **Containerized Application**: The application is containerized, meaning it is encapsulated with its dependencies and configuration for consistency across multiple environments. I'll be using the following web app to showcase this project -> https://github.com/m-marcal/imdb-top-100. The latest build can be found here -> https://github.com/m-marcal/imdb-top-100
 
 ## Infrastructure
 
@@ -34,7 +34,7 @@ This project involves creating a containerized application and deploying it to A
 2. **Clone the Repository**: 
 
      ```bash
-    git clone http://to-do
+    git clone git@github.com:m-marcal/infinet_aws_ecs.git
     ```
 
 3. **Terraform Initialization**: 
@@ -58,7 +58,7 @@ This project involves creating a containerized application and deploying it to A
 6. **Authenticate using docker cli**
 
     * ```bash
-        aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin {ECR_URL}
+      aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin {ECR_URL}
         ```
     * Note: It's very important to remove the container name part from terraform output for the command above work properly. For example, from "320033586563.dkr.ecr.us-east-1.amazonaws.com/infnet-imdb-app-registry" we just need **"320033586563.dkr.ecr.us-east-1.amazonaws.com"**
 
