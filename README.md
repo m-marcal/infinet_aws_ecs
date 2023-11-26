@@ -10,7 +10,7 @@ This project involves creating a containerized application and deploying it to A
 
 - **ECR Repository**: The Docker image of the application is stored in AWS ECR, which is a fully managed Docker container registry that allows developers to store, manage, and deploy Docker container images.
 
-- **Containerized Application**: The application is containerized, meaning it is encapsulated with its dependencies and configuration for consistency across multiple environments. I'll be using the following web app to showcase this project -> https://github.com/m-marcal/imdb-top-100. The latest build can be found here -> https://github.com/m-marcal/imdb-top-100
+- **Containerized Application**: The application is containerized, meaning it is encapsulated with its dependencies and configuration for consistency across multiple environments. I'll be using the following web app to showcase this project -> https://github.com/m-marcal/imdb-top-100. The latest build can be found here -> https://hub.docker.com/repository/docker/marcelomarcal/imdb-top-100
 
 ## Infrastructure
 
