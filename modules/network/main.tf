@@ -15,3 +15,23 @@ resource "aws_internet_gateway" "gateway" {
     Name = "${var.project_name}-igw"
   }
 }
+
+# Public IPs for NAT gateways
+resource "aws_eip" "elastic_ip" {
+  for_each = var.public_subnets
+  domain      = "vpc"
+
+  tags = {
+    Name = "${var.project_name}-eip-nat-gw-${each.key}"
+  }
+}
+
+resource "aws_nat_gateway" "nat_gw" {
+  for_each      = var.public_subnets
+  subnet_id     = aws_subnet.public[each.key].id
+  allocation_id = aws_eip.elastic_ip[each.key].id
+
+  tags = {
+    Name = "${var.project_name}-nat-gw-${each.key}"
+  }
+}

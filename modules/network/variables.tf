@@ -27,3 +27,22 @@ variable "public_subnets" {
     }
   }
 }
+
+variable "private_subnets" {
+  type = map(object({
+    cidr_block = string
+    av_zone = string
+  }))
+
+  default = {
+    private_subnet_1 = {
+      cidr_block = "10.0.3.0/24"
+      av_zone = "us-east-1a"
+    }
+
+    private_subnet_2 = {
+      cidr_block = "10.0.4.0/24"
+      av_zone = "us-east-1b"
+    }
+  }
+}

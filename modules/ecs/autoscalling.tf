@@ -2,7 +2,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity     = var.asg_desired_capacity
   max_size             = var.asg_max_size
   min_size             = var.asg_min_size
-  vpc_zone_identifier  = var.pub_subnet_ids
+  vpc_zone_identifier  = var.priv_subnet_ids
   health_check_type     = "EC2"
 
   launch_template {
@@ -10,7 +10,6 @@ resource "aws_autoscaling_group" "asg" {
     version = "$Latest"
   }
   
-
   tag {
     key                 = "Name"
     value               = "${var.project_name}-asg"

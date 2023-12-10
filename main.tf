@@ -12,6 +12,7 @@ module "ecs" {
   source = "./modules/ecs"
 
   project_name = var.project_name
+  priv_subnet_ids = module.network.private_subnets
   pub_subnet_ids = module.network.public_subnets
   vpc_id = module.network.vpc_id
   TIMDb_API_KEY = var.TIMDb_API_KEY

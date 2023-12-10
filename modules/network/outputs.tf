@@ -4,6 +4,11 @@ output "vpc_id" {
 }
 
 output "public_subnets" {
-  description = "List of availalbe public VPCs connected to the VPC Internet Gateway"
+  description = "List of public subnets"
   value       = [for subnet in aws_subnet.public : subnet.id]
+}
+
+output "private_subnets" {
+  description = "List of private subnets"
+  value       = [for subnet in aws_subnet.private : subnet.id]
 }

@@ -7,6 +7,10 @@ variable "pub_subnet_ids" {
   type = list(string)
 }
 
+variable "priv_subnet_ids" {
+  type = list(string)
+}
+
 variable "vpc_id" {
   type = string  
 }
