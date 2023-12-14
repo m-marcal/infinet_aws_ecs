@@ -4,7 +4,7 @@
 
 This project involves creating a containerized application and deploying it to Amazon Web Services (AWS) using Elastic Container Service (ECS) with Terraform. The application's image is stored in the Elastic Container Registry (ECR), and the service is made highly available by running across multiple Availability Zones (AZs).
 
-![project_arch](docs/aws_arch.png)
+![project_arch](docs/aws_arch.jpeg)
 
 ## Application Details
 
